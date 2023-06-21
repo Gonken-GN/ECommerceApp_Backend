@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const cartSchema = mongoose.Schema(
+const orderSchema = mongoose.Schema(
   {
     userId: {
       type: String,
@@ -33,6 +33,6 @@ const cartSchema = mongoose.Schema(
   { timestamps: true },
 );
 
-const cart = mongoose.model('carts', cartSchema);
+const Order = mongoose.model('orders', orderSchema);
 
-export default cart;
+export default Order;
