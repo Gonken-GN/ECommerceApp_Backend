@@ -14,6 +14,8 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
+import authRouter from './src/routes/auth.routes.js';
+
 const init = () => {
   // setting up the server
   const server = express();
@@ -24,7 +26,7 @@ const init = () => {
   server.use(morgan('common'));
 
   // register the routes
-
+  server.use('/auth', authRouter);
   // get env from .env file
   dotenv.config();
   // get port from .env
