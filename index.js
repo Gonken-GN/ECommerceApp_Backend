@@ -15,6 +15,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
 import authRouter from './src/routes/auth.routes.js';
+import userRouter from './src/routes/user.routes.js';
+import productRouter from './src/routes/product.routes.js';
 
 const init = () => {
   // setting up the server
@@ -27,6 +29,9 @@ const init = () => {
 
   // register the routes
   server.use('/auth', authRouter);
+  server.use('/users', userRouter);
+  server.use('/products', productRouter);
+
   // get env from .env file
   dotenv.config();
   // get port from .env
