@@ -20,7 +20,8 @@
     "helmet": "^7.0.0",
     "mongoose": "^7.3.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "stripe": "^12.10.0"
   },
   "devDependencies": {
     "eslint": "^8.43.0",

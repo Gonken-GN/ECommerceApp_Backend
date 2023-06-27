@@ -17,6 +17,8 @@ import mongoose from 'mongoose';
 import authRouter from './src/routes/auth.routes.js';
 import userRouter from './src/routes/user.routes.js';
 import productRouter from './src/routes/product.routes.js';
+import cartRouter from './src/routes/cart.routes.js';
+import orderRouter from './src/routes/order.routes.js';
 
 const init = () => {
   // setting up the server
@@ -31,6 +33,8 @@ const init = () => {
   server.use('/auth', authRouter);
   server.use('/users', userRouter);
   server.use('/products', productRouter);
+  server.use('/carts', cartRouter);
+  server.use('/orders', orderRouter);
 
   // get env from .env file
   dotenv.config();

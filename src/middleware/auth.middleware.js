@@ -15,7 +15,7 @@ export const auth = (req, res, next) => {
     try {
       const token = authHeader.split(' ')[1];
       const decodedData = jwt.verify(token, process.env.JWT_SEC);
-      console.log(decodedData?.isAdmin);
+      // console.log(decodedData?.isAdmin);
       req.user = {
         id: decodedData?.id,
         isAdmin: decodedData?.isAdmin,
@@ -29,6 +29,11 @@ export const auth = (req, res, next) => {
       return response;
     }
   }
+  // const response = res.status(400).json({
+  //   status: 'fail',
+  //   message: 'Authentication failed. Check auth token.',
+  // });
+  // return response;
 };
 
 export const verifyTokenAndAuthorization = (req, res, next) => {
