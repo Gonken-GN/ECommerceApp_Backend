@@ -7,7 +7,9 @@
  * */
 
 import express from 'express';
-import { createProduct, deleteProduct, updateProduct } from '../controllers/product.controllers.js';
+import {
+  createProduct, deleteProduct, getAllProduct, getProductById, updateProduct,
+} from '../controllers/product.controllers.js';
 import { verifyTokenAdmin } from '../middleware/auth.middleware.js';
 
 const router = express.Router();
@@ -15,5 +17,7 @@ const router = express.Router();
 router.post('/', verifyTokenAdmin, createProduct);
 router.put('/:id', verifyTokenAdmin, updateProduct);
 router.delete('/:id', verifyTokenAdmin, deleteProduct);
+router.get('/', getAllProduct);
+router.get('/:id', getProductById);
 
 export default router;
